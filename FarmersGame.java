@@ -32,8 +32,6 @@ public class FarmersGame
 	
 	/** 
 	* prints out welcome message to let user know how game works
-	* @param none
-	* @return none
 	*/
 	public static void welcome()
 	{
@@ -83,7 +81,10 @@ public class FarmersGame
 	 	System.out.println(bank1);
 
 	 }
-	 
+	 /**
+	  * this method takes user input, and moves objects accordingly 
+	  * @param global variables cabb, wolf, sheep, human
+	  */ 
 	 public static void userInput()
 	 {
 	 	Scanner kb = new Scanner(System.in); // getting information from keyboard
@@ -142,7 +143,10 @@ public class FarmersGame
 
 
 	 }
-	 
+	 /** 
+	  * this method checks for wins/losses based on what objects are on what bank
+	  * @param global variables cabb, wolf, sheep, human
+	  */
 	 public static void checkWin()
 	 {
 	 if ((cabb == true && sheep == true && human == false)||(cabb == false && sheep == false && human == true))
