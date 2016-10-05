@@ -35,8 +35,8 @@ public class FarmersGame
 	*/
 	public static void welcome()
 	{
-		System.out.println("Farmer's Game"); 
-		System.out.println("Your goal is to bring the cabbage, wolf, sheep, and human safely to the other side of the river. You have one boat, that can only be operated by the human. The sheep and cabbage cannot be on the same bank because the sheep will eat the cabbage, and the wolf cannot be on the same bank as the sheep because the wolf will eat the sheep.");
+		System.out.println("FARMER'S GAME"); 
+		System.out.println("Your goal is to bring the cabbage, wolf, sheep, and human safely to the other side of the river. You have one boat, and it can only be operated by the human. The sheep and cabbage cannot be on the same bank because the sheep will eat the cabbage, and the wolf cannot be on the same bank as the sheep because the wolf will eat the sheep.");
 		System.out.println("~~~~~~~~~~~~~~ GOOD LUCK! ~~~~~~~~~~~~~~");
 		System.out.println();
 	}
@@ -91,58 +91,82 @@ public class FarmersGame
 		System.out.print("Which object would you like to move? ");
 		String object = kb.nextLine();
 		
-		if (object.equals("cabbage"))
+		if (object.equals("cabbage") && human == cabb)
 			{
-			if (cabb == true)
-				cabb = false;
-			else if (cabb == false)
-				cabb = true;
-				
-			if (cabb == true && human != true)
-				human = true;
-			if (cabb == false && human != false)
-				human = false;
+			cabb = !cabb;
+			human = !human;
 			}
+		else if (object.equals("wolf") && human == wolf)
+			{
+			wolf = !wolf;
+			human = !human;
+			}
+		else if (object.equals("sheep") && human == sheep)
+			{
+			sheep = !sheep;
+			human = !human;
+			}
+		else if (object.equals("human"))
+			{
+			human = !human;
+			}	
 			
-		
-		if (object.equals("wolf"))
-			{
-			if (wolf == true)
-				wolf = false;
-			else if (wolf == false)
-				wolf = true;
-				
-			if (wolf == true && human != true)
-				human = true;
-			if (wolf == false && human != false)
-				human = false;
-			}
-			
-		
-		if (object.equals("sheep"))
-			{
-			if (sheep == true)
-				sheep = false;
-			else if (sheep == false)
-				sheep = true;
-				
-			if (sheep == true && human != true)
-				human = true;
-			if (sheep == false && human != false)
-				human = false;
-			}
-			
-		
-		if (object.equals("human"))
-			{
-			if (human == true)
-				human = false;
-			else if (human == false)
-				human = true;
-			}
+		else
+			System.out.println("~~~The object cannot move without the human operating the boat. Please move the human first. ~~~ ");
 
-
-	 }
+	}
+			
+			
+//			if (cabb == true)
+//				cabb = false;
+//			else if (cabb == false)
+//				cabb = true;
+//				
+///			if (cabb == true && human != true)
+//				human = true;
+//			if (cabb == false && human != false)
+//				human = false;
+//			}
+//			
+//		
+//		if (object.equals("wolf"))
+//			{
+//			if (wolf == true)
+//				wolf = false;
+//			else if (wolf == false)
+//				wolf = true;
+//				
+//			if (wolf == true && human != true)
+//				human = true;
+//			if (wolf == false && human != false)
+//				human = false;
+//			}
+//			
+//		
+//		if (object.equals("sheep"))
+//			{
+//			if (sheep == true)
+//				sheep = false;
+//			else if (sheep == false)
+//				sheep = true;	
+//			if (sheep == true && human != true)
+//				human = true;
+//			if (sheep == false && human != false)
+//				human = false;
+//			
+//			}
+//			
+//		
+//		if (object.equals("human"))
+//			{
+//			if (human == true)
+//				human = false;
+//			else if (human == false)
+//				human = true;
+//			}
+//
+//
+//	 }
 	 /** 
 	  * this method checks for wins/losses based on what objects are on what bank
 	  * @param global variables cabb, wolf, sheep, human
