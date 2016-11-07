@@ -90,7 +90,11 @@ public class FarmersGame
 	 	Scanner kb = new Scanner(System.in); // getting information from keyboard
 		System.out.print("Which object would you like to move? ");
 		String object = kb.nextLine();
-		
+		if (!(object.equals("cabbage") || object.equals("wolf") || object.equals("sheep") || object.equals("human")))
+		{
+			System.out.println("What you entered was invalid, please enter 'cabbage', 'wolf', 'sheep', or 'human'");
+			userInput();
+		}
 		if (object.equals("cabbage") && human == cabb)
 			{
 			cabb = !cabb;
@@ -116,57 +120,6 @@ public class FarmersGame
 
 	}
 			
-			
-//			if (cabb == true)
-//				cabb = false;
-//			else if (cabb == false)
-//				cabb = true;
-//				
-///			if (cabb == true && human != true)
-//				human = true;
-//			if (cabb == false && human != false)
-//				human = false;
-//			}
-//			
-//		
-//		if (object.equals("wolf"))
-//			{
-//			if (wolf == true)
-//				wolf = false;
-//			else if (wolf == false)
-//				wolf = true;
-//				
-//			if (wolf == true && human != true)
-//				human = true;
-//			if (wolf == false && human != false)
-//				human = false;
-//			}
-//			
-//		
-//		if (object.equals("sheep"))
-//			{
-//			if (sheep == true)
-//				sheep = false;
-//			else if (sheep == false)
-//				sheep = true;	
-//			if (sheep == true && human != true)
-//				human = true;
-//			if (sheep == false && human != false)
-//				human = false;
-//			
-//			}
-//			
-//		
-//		if (object.equals("human"))
-//			{
-//			if (human == true)
-//				human = false;
-//			else if (human == false)
-//				human = true;
-//			}
-//
-//
-//	 }
 	 /** 
 	  * this method checks for wins/losses based on what objects are on what bank
 	  * @param global variables cabb, wolf, sheep, human
